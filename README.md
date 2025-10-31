@@ -186,6 +186,37 @@ src/main/kotlin/com/github/yan/switch2trae/
 4. 推送分支：`git push origin feature/amazing-feature`
 5. 提交 Pull Request
 
+## 📦 发布和分发
+
+### 从 JetBrains Marketplace 安装
+1. 打开 IDE → `Settings/Preferences` → `Plugins`
+2. 搜索 "Switch2Trae"
+3. 点击 `Install` 并重启 IDE
+
+### 手动安装
+1. 从 [Releases](https://github.com/yan/switch2trae/releases) 下载最新版本
+2. 打开 IDE → `Settings/Preferences` → `Plugins`
+3. 点击齿轮图标 → `Install Plugin from Disk`
+4. 选择下载的 `.zip` 文件并重启 IDE
+
+### 开发者发布指南
+如果你想参与插件开发或发布自己的版本：
+
+- 📋 **快速发布**：查看 [QUICK_PUBLISH.md](./QUICK_PUBLISH.md)
+- 📖 **详细指南**：查看 [PUBLISH_GUIDE.md](./PUBLISH_GUIDE.md)
+- 🔍 **发布检查**：运行 `scripts/check-release.ps1`
+
+```bash
+# 构建插件包
+./gradlew buildPlugin
+
+# 发布前检查
+./scripts/check-release.ps1
+
+# 发布到市场（需要 API Token）
+./gradlew publishPlugin
+```
+
 ## 🙋 常见问题
 
 ### 安装和配置

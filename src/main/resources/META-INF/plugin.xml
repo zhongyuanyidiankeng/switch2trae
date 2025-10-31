@@ -6,27 +6,64 @@
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
     <name>Switch2Trae</name>
+    
+    <!-- Plugin version -->
+    <version>1.0.0</version>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://github.com/zhongyuanyidiankeng">Yan</vendor>
+    <vendor email="switch2trae@example.com" url="https://github.com/yan/switch2trae">Switch2Trae Team</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
-        A JetBrains IDE plugin that enables smooth switching between JetBrains IDE and Trae, with automatic cursor position sync.<br>
-        <br>
-        <strong>Features:</strong><br>
-        • One-click switch between JetBrains IDE and Trae<br>
-        • Automatically positions to the same cursor location (line and column)<br>
-        • Keyboard shortcuts support<br>
-        • Context menu integration<br>
-        • Tools menu access<br>
-        <br>
-        <strong>Shortcuts:</strong><br>
-        • <em>Alt+Shift+P</em> - Open project in Trae<br>
-        • <em>Alt+Shift+O</em> - Open current file in Trae<br>
-    ]]></description>
+    <h3>🚀 Seamless IDE Integration with Trae</h3>
+    <p>Switch2Trae enables effortless switching between JetBrains IDEs and Trae IDE while maintaining your workflow context.</p>
+    
+    <h4>✨ Key Features:</h4>
+    <ul>
+        <li><strong>🎯 Smart Context Switching</strong> - Open current project or file in Trae IDE with a single keystroke</li>
+        <li><strong>📍 Cursor Position Sync</strong> - Automatically positions cursor at the exact line and column</li>
+        <li><strong>⌨️ Keyboard Shortcuts</strong> - Quick access via Alt+Shift+P (project) and Alt+Shift+O (file)</li>
+        <li><strong>🔧 Flexible Configuration</strong> - Support for multiple Trae command-line formats</li>
+        <li><strong>🎨 Context Menu Integration</strong> - Right-click to switch directly from editor or project tree</li>
+        <li><strong>🛠️ Error Handling</strong> - Intelligent error detection with helpful troubleshooting guidance</li>
+    </ul>
+    
+    <h4>🎮 Usage:</h4>
+    <ul>
+        <li>Use <code>Alt+Shift+P</code> to open current project in Trae</li>
+        <li>Use <code>Alt+Shift+O</code> to open current file in Trae</li>
+        <li>Right-click in editor or project tree for context menu options</li>
+        <li>Configure Trae executable path in Settings → Tools → Switch2Trae</li>
+    </ul>
+    
+    <h4>🔧 Supported Command Formats:</h4>
+    <ul>
+        <li><code>file:line:column</code> (VS Code style)</li>
+        <li><code>--goto line:column file</code> (Vim style)</li>
+        <li><code>-g file:line:column</code> (Emacs style)</li>
+        <li><code>file +line:column</code> (Nano style)</li>
+    </ul>
+    
+    <p><strong>Perfect for developers who want to leverage the best of both JetBrains and Trae ecosystems!</strong></p>
+  ]]></description>
 
+    <change-notes><![CDATA[
+    <h3>v1.0.0 - Initial Release 🎉</h3>
+    <ul>
+        <li>✨ <strong>Project Switching</strong> - Open entire projects in Trae IDE</li>
+        <li>📄 <strong>File Switching</strong> - Open individual files with cursor positioning</li>
+        <li>⌨️ <strong>Keyboard Shortcuts</strong> - Alt+Shift+P and Alt+Shift+O for quick access</li>
+        <li>🎨 <strong>Context Menu</strong> - Right-click integration in editor and project tree</li>
+        <li>🔧 <strong>Flexible Configuration</strong> - Multiple command-line format support</li>
+        <li>🛠️ <strong>Smart Error Handling</strong> - Helpful troubleshooting dialogs</li>
+        <li>📍 <strong>Cursor Sync</strong> - Maintains exact cursor position across IDEs</li>
+    </ul>
+  ]]></change-notes>
+
+    <!-- Compatibility -->
+    <idea-version since-build="251" until-build="251.*"/>
+    
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
