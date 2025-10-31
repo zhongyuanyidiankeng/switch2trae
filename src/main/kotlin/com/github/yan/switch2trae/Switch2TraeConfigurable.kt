@@ -1,0 +1,94 @@
+package com.github.yan.switch2trae
+
+import com.intellij.openapi.components.service
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
+import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.ui.TextFieldWithBrowseButton
+import com.intellij.ui.components.JBLabel
+import com.intellij.util.ui.FormBuilder
+import javax.swing.JComponent
+import javax.swing.JPanel
+import javax.swing.JComboBox
+
+/**
+ * Configurable for Switch2Trae settings
+ */
+class Switch2TraeConfigurable(private val project: Project) : Configurable {
+    
+    private var traePathField: TextFieldWithBrowseButton? = null
+    private var formatComboBox: JComboBox<String>? = null
+    private var mainPanel: JPanel? = null
+    
+    companion object {
+        private val COMMAND_FORMATS = arrayOf(
+            "file:line:column",
+            "--goto line:column file",
+            "-g file:line:column",
+            "file +line:column"
+        )
+    }
+    
+    override fun getDisplayName(): String = "Switch2Trae"
+    
+    override fun createComponent(): JComponent? {
+        val traePathField = TextFieldWithBrowseButton().apply {
+            addBrowseFolderListener(
+                project,
+                FileChooserDescriptorFactory.createSingleFileDescriptor()
+                    .withTitle("Select Trae Executable")
+                    .withDescription("Choose the path to Trae executable")
+            )
+        }
+        this.traePathField = traePathField
+        
+        val formatComboBox = JComboBox(COMMAND_FORMATS)
+        this.formatComboBox = formatComboBox
+        
+        mainPanel = FormBuilder.createFormBuilder()
+            .addLabeledComponent(
+                JBLabel("Trae executable path:"),
+                traePathField,
+                1,
+                false
+            )
+            .addLabeledComponent(
+                JBLabel("Command line format:"),
+                formatComboBox,
+                1,
+                false
+            )
+            .addComponentFillVertically(JPanel(), 0)
+            .panel
+        
+        return mainPanel
+    }
+    
+    override fun isModified(): Boolean {
+        val settings = project.service<Switch2TraeSettings>()
+        return traePathField?.text != settings.traeExecutablePath ||
+               formatComboBox?.selectedItem as? String != settings.commandLineFormat
+    }
+    
+    override fun apply() {
+        val settings = project.service<Switch2TraeSettings>()
+        traePathField?.text?.let { path ->
+            settings.traeExecutablePath = path.trim().ifEmpty { "trae" }
+        }
+        formatComboBox?.selectedItem?.let { format ->
+            settings.commandLineFormat = format as String
+        }
+    }
+    
+    override fun reset() {
+        val settings = project.service<Switch2TraeSettings>()
+        traePathField?.text = settings.traeExecutablePath
+        formatComboBox?.selectedItem = settings.commandLineFormat
+    }
+    
+    override fun disposeUIResources() {
+        traePathField = null
+        formatComboBox = null
+        mainPanel = null
+    }
+}

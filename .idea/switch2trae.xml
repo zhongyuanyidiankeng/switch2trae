@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Switch2TraeSettings">
+    <option name="commandLineFormat" value="-g file:line:column" />
+    <option name="traeExecutablePath" value="D:\softwares\Trae\Trae.exe" />
+  </component>
+</project>

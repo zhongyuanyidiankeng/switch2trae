@@ -1,0 +1,88 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.github.yan.switch2trae</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>Switch2Trae</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://github.com/zhongyuanyidiankeng">Yan</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        A JetBrains IDE plugin that enables smooth switching between JetBrains IDE and Trae, with automatic cursor position sync.<br>
+        <br>
+        <strong>Features:</strong><br>
+        • One-click switch between JetBrains IDE and Trae<br>
+        • Automatically positions to the same cursor location (line and column)<br>
+        • Keyboard shortcuts support<br>
+        • Context menu integration<br>
+        • Tools menu access<br>
+        <br>
+        <strong>Shortcuts:</strong><br>
+        • <em>Alt+Shift+P</em> - Open project in Trae<br>
+        • <em>Alt+Shift+O</em> - Open current file in Trae<br>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Settings configurable -->
+        <projectConfigurable 
+            parentId="tools" 
+            instance="com.github.yan.switch2trae.Switch2TraeConfigurable" 
+            id="com.github.yan.switch2trae.configurable" 
+            displayName="Switch2Trae"/>
+        
+        <!-- Project service -->
+        <projectService serviceImplementation="com.github.yan.switch2trae.Switch2TraeSettings"/>
+    </extensions>
+
+    <!-- Actions -->
+    <actions>
+        <!-- Main action group -->
+        <group id="Switch2TraeGroup" text="Switch2Trae" description="Switch to Trae actions">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            
+            <!-- Open Project in Trae -->
+            <action id="Switch2Trae.OpenProject" 
+                    class="com.github.yan.switch2trae.OpenProjectInTraeAction" 
+                    text="Open Project in Trae" 
+                    description="Open current project in Trae">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift P"/>
+            </action>
+            
+            <!-- Open File in Trae -->
+            <action id="Switch2Trae.OpenFile" 
+                    class="com.github.yan.switch2trae.OpenFileInTraeAction" 
+                    text="Open File in Trae" 
+                    description="Open current file in Trae">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift O"/>
+                <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            </action>
+        </group>
+        
+        <!-- Project view context menu -->
+        <action id="Switch2Trae.OpenProjectContext" 
+                class="com.github.yan.switch2trae.OpenProjectInTraeAction" 
+                text="Open Project in Trae" 
+                description="Open project in Trae">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+        
+        <!-- File context menu -->
+        <action id="Switch2Trae.OpenFileContext" 
+                class="com.github.yan.switch2trae.OpenFileInTraeAction" 
+                text="Open File in Trae" 
+                description="Open file in Trae">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
