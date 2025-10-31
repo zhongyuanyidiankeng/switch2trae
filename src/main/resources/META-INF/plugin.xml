@@ -16,8 +16,9 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
+Switch2Trae enables effortless switching between JetBrains IDEs and Trae IDE while maintaining your workflow context.
+
     <h3>🚀 Seamless IDE Integration with Trae</h3>
-    <p>Switch2Trae enables effortless switching between JetBrains IDEs and Trae IDE while maintaining your workflow context.</p>
     
     <h4>✨ Key Features:</h4>
     <ul>
