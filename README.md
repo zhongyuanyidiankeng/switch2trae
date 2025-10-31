@@ -259,7 +259,7 @@ A: 按以下步骤排查：
 ### 获取帮助
 - 📋 [GitHub Issues](https://github.com/yan/switch2trae/issues) - 报告问题或建议
 - 💬 [Discussions](https://github.com/yan/switch2trae/discussions) - 社区讨论
-- 📧 Email: [your-email@example.com](mailto:your-email@example.com)
+- 📧 Email: [yanwanglaiye@proton.me](mailto:your-email@example.com)
 
 ### 项目状态
 - 🔄 积极维护中
@@ -272,6 +272,6 @@ A: 按以下步骤排查：
 
 **如果这个插件对你有帮助，请给我们一个 ⭐ Star！**
 
-Made with ❤️ by the Switch2Trae Team
+以上均有ai生成
 
 </div>
