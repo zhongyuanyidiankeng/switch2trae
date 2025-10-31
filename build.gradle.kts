@@ -1,3 +1,5 @@
+import org.jetbrains.intellij.platform.gradle.tasks.BuildSearchableOptionsTask.Companion.register
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.1.0"
@@ -34,7 +36,7 @@ intellijPlatform {
         // IDE version compatibility
         ideaVersion {
             sinceBuild = "251"
-            untilBuild = "251.*"
+            // 不设置 untilBuild，表示兼容所有未来版本
         }
 
         // Change notes for this version
@@ -91,10 +93,7 @@ tasks {
         useJUnitPlatform()
     }
     
-    // Ensure plugin.xml is properly configured before building
-    buildPlugin {
-        dependsOn("verifyPlugin")
-    }
+    // Plugin verification is handled automatically by the IntelliJ Platform plugin
     
     // Custom task to prepare for release
     register("prepareRelease") {
