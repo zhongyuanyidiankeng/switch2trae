@@ -34,7 +34,7 @@ cd d:/github/switch2trae
 
 ### 第三步：手动上传发布
 1. **准备插件包**：
-   - 文件位置：`build/distributions/Switch2Trae-1.0.0.zip`
+   - 文件位置：`build/distributions/Switch2Trae-1.1.0.zip`
    - 确保文件大小合理（通常 < 10MB）
 
 2. **登录插件市场**：
@@ -121,4 +121,4 @@ cd d:/github/switch2trae
 
 **祝你发布成功！** 🚀
 
-插件包位置：`build/distributions/Switch2Trae-1.0.0.zip`
+插件包位置：`build/distributions/Switch2Trae-1.1.0.zip`

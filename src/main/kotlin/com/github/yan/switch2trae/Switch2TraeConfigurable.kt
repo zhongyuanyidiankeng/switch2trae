@@ -1,9 +1,7 @@
 package com.github.yan.switch2trae
 
-import com.intellij.openapi.components.service
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
 import com.intellij.openapi.options.Configurable
-import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.TextFieldWithBrowseButton
 import com.intellij.ui.components.JBLabel
 import com.intellij.util.ui.FormBuilder
@@ -14,7 +12,7 @@ import javax.swing.JComboBox
 /**
  * Configurable for Switch2Trae settings
  */
-class Switch2TraeConfigurable(private val project: Project) : Configurable {
+class Switch2TraeConfigurable : Configurable {
     
     private var traePathField: TextFieldWithBrowseButton? = null
     private var formatComboBox: JComboBox<String>? = null
@@ -65,13 +63,13 @@ class Switch2TraeConfigurable(private val project: Project) : Configurable {
     }
     
     override fun isModified(): Boolean {
-        val settings = project.service<Switch2TraeSettings>()
+        val settings = Switch2TraeSettings.getInstance()
         return traePathField?.text != settings.traeExecutablePath ||
                formatComboBox?.selectedItem as? String != settings.commandLineFormat
     }
     
     override fun apply() {
-        val settings = project.service<Switch2TraeSettings>()
+        val settings = Switch2TraeSettings.getInstance()
         traePathField?.text?.let { path ->
             settings.traeExecutablePath = path.trim().ifEmpty { "trae" }
         }
@@ -81,7 +79,7 @@ class Switch2TraeConfigurable(private val project: Project) : Configurable {
     }
     
     override fun reset() {
-        val settings = project.service<Switch2TraeSettings>()
+        val settings = Switch2TraeSettings.getInstance()
         traePathField?.text = settings.traeExecutablePath
         formatComboBox?.selectedItem = settings.commandLineFormat
     }

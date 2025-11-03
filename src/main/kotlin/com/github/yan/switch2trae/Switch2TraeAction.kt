@@ -44,7 +44,7 @@ abstract class Switch2TraeAction : AnAction() {
 
     private fun openProjectInTrae(project: Project) {
         val projectPath = project.basePath ?: return
-        val settings = project.service<Switch2TraeSettings>()
+        val settings = Switch2TraeSettings.getInstance()
         
         executeTraeCommand(listOf(settings.traeExecutablePath, projectPath))
     }
@@ -52,7 +52,7 @@ abstract class Switch2TraeAction : AnAction() {
     private fun openFileInTrae(e: AnActionEvent, project: Project) {
         val virtualFile = e.getData(CommonDataKeys.VIRTUAL_FILE) ?: return
         val editor = e.getData(CommonDataKeys.EDITOR)
-        val settings = project.service<Switch2TraeSettings>()
+        val settings = Switch2TraeSettings.getInstance()
         
         val filePath = virtualFile.path
         

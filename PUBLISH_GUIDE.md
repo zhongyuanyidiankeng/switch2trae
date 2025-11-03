@@ -52,7 +52,7 @@
     <name>Switch2Trae</name>
     
     <!-- 版本号 -->
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     
     <!-- 开发者信息 -->
     <vendor email="yanwanglaiye@proton.me" url="https://github.com/zhongyuanyidiankeng">Yan</vendor>
@@ -64,7 +64,7 @@
     
     <!-- 更新日志 -->
     <change-notes><![CDATA[
-        v1.0.0:
+        v1.1.0:
         - 初始版本发布
         - 支持项目和文件切换
         - 智能光标位置同步
@@ -86,7 +86,7 @@
 intellijPlatform {
     pluginConfiguration {
         // 版本信息
-        version = "1.0.0"
+        version = "1.1.0"
         
         // IDE 版本兼容性
         ideaVersion {
@@ -96,7 +96,7 @@ intellijPlatform {
         
         // 更新日志
         changeNotes = """
-            <h3>v1.0.0 - 初始版本</h3>
+            <h3>v1.1.0 - 全局配置更新</h3>
             <ul>
                 <li>✨ 支持 JetBrains IDE 与 Trae IDE 之间的无缝切换</li>
                 <li>🎯 智能光标位置同步</li>
@@ -143,7 +143,7 @@ intellijPlatform {
 ls build/distributions/
 
 # 应该看到类似文件：
-# Switch2Trae-1.0.0.zip
+# Switch2Trae-1.1.0.zip
 ```
 
 ### 3.3 本地安装测试
@@ -157,7 +157,7 @@ ls build/distributions/
 ### 4.1 手动上传方式
 
 #### 准备发布材料
-1. **插件包**：`build/distributions/Switch2Trae-1.0.0.zip`
+1. **插件包**：`build/distributions/Switch2Trae-1.1.0.zip`
 2. **插件描述**：准备详细的功能说明
 3. **截图**：准备 2-5 张功能演示截图
 4. **标签**：选择合适的分类标签

@@ -1,12 +1,12 @@
 package com.github.yan.switch2trae
 
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.*
-import com.intellij.openapi.project.Project
 
 /**
  * Settings service for Switch2Trae plugin
  */
-@Service(Service.Level.PROJECT)
+@Service(Service.Level.APP)
 @State(
     name = "Switch2TraeSettings",
     storages = [Storage("switch2trae.xml")]
@@ -39,8 +39,8 @@ class Switch2TraeSettings : PersistentStateComponent<Switch2TraeSettings.State> 
     }
     
     companion object {
-        fun getInstance(project: Project): Switch2TraeSettings {
-            return project.service<Switch2TraeSettings>()
+        fun getInstance(): Switch2TraeSettings {
+            return ApplicationManager.getApplication().getService(Switch2TraeSettings::class.java)
         }
     }
 }

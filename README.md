@@ -3,7 +3,7 @@
 <div align="center">
 
 ![JetBrains Plugin](https://img.shields.io/badge/JetBrains-Plugin-orange.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/platform-IntelliJ%20Platform-lightgrey.svg)
 
@@ -252,7 +252,13 @@ A: 按以下步骤排查：
 
 ## 📝 更新日志
 
-### v1.0.0 (最新)
+### v1.1.0 (最新)
+- 🌐 **全局配置** - 配置现在应用于所有项目
+- ⚙️ **应用级别设置** - 无需为每个项目重新配置
+- 🔄 **改进用户体验** - 一次设置，全局生效
+- 📍 **设置位置** - 在 File → Settings → Tools → Switch2Trae 中找到配置
+
+### v1.0.0
 - ✨ 支持多种命令行格式
 - 🐛 修复 EDT 线程访问问题
 - 🔧 更新到最新 IntelliJ Platform API

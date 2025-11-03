@@ -8,7 +8,7 @@
     <name>Switch2Trae</name>
     
     <!-- Plugin version -->
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="switch2trae@example.com" url="https://github.com/yan/switch2trae">Switch2Trae Team</vendor>
@@ -50,6 +50,14 @@ Switch2Trae enables effortless switching between JetBrains IDEs and Trae IDE whi
   ]]></description>
 
     <change-notes><![CDATA[
+    <h3>v1.1.0 - Global Configuration Update 🔧</h3>
+    <ul>
+        <li>🌐 <strong>Global Settings</strong> - Configuration now applies to all projects globally</li>
+        <li>⚙️ <strong>Application-Level Configuration</strong> - No need to reconfigure for each project</li>
+        <li>🔄 <strong>Improved User Experience</strong> - One-time setup for all your projects</li>
+        <li>📍 <strong>Settings Location</strong> - Find configuration in File → Settings → Tools → Switch2Trae</li>
+    </ul>
+    
     <h3>v1.0.0 - Initial Release 🎉</h3>
     <ul>
         <li>✨ <strong>Project Switching</strong> - Open entire projects in Trae IDE</li>
@@ -73,14 +81,14 @@ Switch2Trae enables effortless switching between JetBrains IDEs and Trae IDE whi
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <!-- Settings configurable -->
-        <projectConfigurable 
+        <applicationConfigurable 
             parentId="tools" 
             instance="com.github.yan.switch2trae.Switch2TraeConfigurable" 
-            id="com.github.yan.switch2trae.configurable" 
+            id="com.github.yan.switch2trae.Switch2TraeConfigurable" 
             displayName="Switch2Trae"/>
         
-        <!-- Project service -->
-        <projectService serviceImplementation="com.github.yan.switch2trae.Switch2TraeSettings"/>
+        <!-- Application service -->
+        <applicationService serviceImplementation="com.github.yan.switch2trae.Switch2TraeSettings"/>
     </extensions>
 
     <!-- Actions -->
