@@ -32,10 +32,10 @@ class Switch2TraeConfigurable : Configurable {
     override fun createComponent(): JComponent? {
         val traePathField = TextFieldWithBrowseButton().apply {
             addBrowseFolderListener(
-                project,
+                "Select Trae Executable",
+                "Choose the path to Trae executable",
+                null,
                 FileChooserDescriptorFactory.createSingleFileDescriptor()
-                    .withTitle("Select Trae Executable")
-                    .withDescription("Choose the path to Trae executable")
             )
         }
         this.traePathField = traePathField
